@@ -1,8 +1,7 @@
 {
-
     "manifest_version": 2,
     "name": "NTUST ID is Not Password!!!!!",
-    "version": "1.0",
+    "version": "2.0",
   
     "description": "杜絕反人類的登入",
 
@@ -12,8 +11,13 @@
   
     "content_scripts": [
       {
-        "matches": ["*://*.ntust.edu.tw/*"],
-        "js": ["jquery.min.js","main.js"]
-        }
+        "matches": ["*://moodle.ntust.edu.tw/*"],
+        "js": ["moodle.js"]
+      },
+      {
+        "matches": ["*://stuinfosys.ntust.edu.tw/*"],
+        "js": ["stuinfosys.js"],
+        "run_at": "document_start"
+      }
     ]
   }
