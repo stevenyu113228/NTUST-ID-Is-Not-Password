@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     let tmp = document.body.innerHTML;
     document.body.innerHTML = "meow= =";
-    tmp = tmp.replace(`name="UserName" type="password"`,
-    `name="UserName" type="text"`);    
+    tmp = tmp.replace(/(name="UserName".+type=")(password)/g,
+    `$1text`);    
     document.body.innerHTML = tmp;
 
     let newScript = document.createElement('script');
